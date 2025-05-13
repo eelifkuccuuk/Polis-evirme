@@ -1,0 +1,61 @@
+package elif;
+
+import java.util.Scanner;
+
+public class çevirme2 {
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        System.out.print("Ehliyetiniz var mı? (evet/hayır): ");
+	        String ehliyetCevap = scanner.nextLine().toLowerCase();
+	        if (!ehliyetCevap.equals("evet") && !ehliyetCevap.equals("hayır")) {
+	            System.out.println("Geçersiz giriş! Programdan çıkılıyor.");
+	            return;
+	        }
+	        System.out.print("Alkollü müsünüz? (evet/hayır): ");
+	        String alkolCevap = scanner.nextLine().toLowerCase();
+	        if (!alkolCevap.equals("evet") && !alkolCevap.equals("hayır")) {
+	            System.out.println("Geçersiz giriş! Programdan çıkılıyor.");
+	            return;
+	        }
+	        System.out.print("Ruhsatınız var mı? (evet/hayır): ");
+	        String ruhsatCevap = scanner.nextLine().toLowerCase();
+	        if (!ruhsatCevap.equals("evet") && !ruhsatCevap.equals("hayır")) {
+	            System.out.println("Geçersiz giriş! Programdan çıkılıyor.");
+	            return;
+	        }
+	        System.out.print("Emniyet kemeri takılı mı? (evet/hayır): ");
+	        String kemerCevap = scanner.nextLine().toLowerCase();
+	        if (!kemerCevap.equals("evet") && !kemerCevap.equals("hayır")) {
+	            System.out.println("Geçersiz giriş! Programdan çıkılıyor.");
+	            return;
+	        }
+	        boolean ehliyetVar = ehliyetCevap.equals("evet");
+	        boolean alkolluMu = alkolCevap.equals("evet");
+	        boolean ruhsatVar = ruhsatCevap.equals("evet");
+	        boolean kemerTakili = kemerCevap.equals("evet");
+
+	        System.out.println("\n--- Kontrol Sonuçları ---");
+
+	        if (!ehliyetVar) {
+	            System.out.println("Ehliyetiniz yok! Ehliyetsiz trafiğe çıkmaktan cezai işlem uygulanacak.");
+	        }
+
+	        if (alkolluMu) {
+	            System.out.println("Alkollüsünüz! Alkollü olmaktan cezai işlem uygulanacak.");
+	        }
+
+	        if (!ruhsatVar) {
+	            System.out.println("Ruhsatınız yok! Ruhsat taşımamaktan cezai işlem uygulanacak.");
+	        }
+
+	        if (!kemerTakili) {
+	            System.out.println("Emniyet kemeri takılı değil! Emniyet kemeri takmamaktan cezai işlem uygulanacak.");
+	            
+	        }
+	        if (ehliyetVar && !alkolluMu && ruhsatVar && kemerTakili) {
+	            System.out.println("Her şey yolunda. İyi yolculuklar dilerim!");
+	        }
+
+	        scanner.close();
+	    }
+	}
